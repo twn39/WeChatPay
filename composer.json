@@ -1,0 +1,17 @@
+{
+    "name": "monster/wxpay",
+    "authors": [
+        {
+            "name": "twn39",
+            "email": "twn39@163.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Monster\\WeChatPay\\": "src/"
+        }
+    },
+    "require": {
+        "guzzlehttp/guzzle": "^6.1"
+    }
+}
