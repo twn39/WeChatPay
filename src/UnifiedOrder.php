@@ -55,17 +55,18 @@ class UnifiedOrder
         $this->status = (string) $responseObj->return_code;
         $this->returnMessage = (string) $responseObj->return_msg;
 
-        if ($this->status === 'SUCCESS') {
-            $this->responseContent['appid'] = (string) $responseObj->appid;
-            $this->responseContent['partnerid'] = (string) $responseObj->mch_id;
-            $this->responseContent['noncestr'] = (string) $responseObj->nonce_str;
-            $this->responseContent['sign'] = (string) $responseObj->sign;
-            $this->responseContent['prepayid'] = (string) $responseObj->prepay_id;
+        if ($this->status !== 'SUCCESS') {
 
-            return $this->responseContent;
-        } else {
             throw new Exception($this->returnMessage);
         }
+
+        $this->responseContent['appid'] = (string) $responseObj->appid;
+        $this->responseContent['partnerid'] = (string) $responseObj->mch_id;
+        $this->responseContent['noncestr'] = (string) $responseObj->nonce_str;
+        $this->responseContent['sign'] = (string) $responseObj->sign;
+        $this->responseContent['prepayid'] = (string) $responseObj->prepay_id;
+
+        return $this->responseContent;
     }
 
     /**
