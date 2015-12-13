@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Monster\WeChatPay;
 
 use GuzzleHttp\Client;
@@ -56,7 +55,6 @@ class UnifiedOrder
         $this->returnMessage = (string) $responseObj->return_msg;
 
         if ($this->status !== 'SUCCESS') {
-
             throw new Exception($this->returnMessage);
         }
 
