@@ -1,5 +1,7 @@
 微信App支付生成预订单服务端代码
 
+[![StyleCI](https://styleci.io/repos/47909918/shield)](https://styleci.io/repos/47909918)
+[![Code Climate](https://codeclimate.com/github/twn39/WeChatPay/badges/gpa.svg)](https://codeclimate.com/github/twn39/WeChatPay)
 示例：
 
 ```php
