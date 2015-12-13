@@ -1,4 +1,5 @@
-<?php 
+<?php
+
 
 namespace Monster\WeChatPay;
 
@@ -7,7 +8,7 @@ use GuzzleHttp\Psr7\Request;
 
 class UnifiedOrder
 {
-	private $order;
+    private $order;
     private $requestXML;
     private $responseXML;
     private $timeout = 30;
@@ -26,7 +27,7 @@ class UnifiedOrder
         $this->order = $order;
 
         $this->requestXML = $this->order->toXML();
-        $this->client = new Client;
+        $this->client = new Client();
     }
 
     /**
@@ -38,8 +39,9 @@ class UnifiedOrder
     }
 
     /**
-     * @return array
      * @throws Exception
+     *
+     * @return array
      */
     public function send()
     {
@@ -53,8 +55,7 @@ class UnifiedOrder
         $this->status = (string) $responseObj->return_code;
         $this->returnMessage = (string) $responseObj->return_msg;
 
-        if ( $this->status === 'SUCCESS' ) {
-
+        if ($this->status === 'SUCCESS') {
             $this->responseContent['appid'] = (string) $responseObj->appid;
             $this->responseContent['partnerid'] = (string) $responseObj->mch_id;
             $this->responseContent['noncestr'] = (string) $responseObj->nonce_str;
@@ -62,17 +63,13 @@ class UnifiedOrder
             $this->responseContent['prepayid'] = (string) $responseObj->prepay_id;
 
             return $this->responseContent;
-
         } else {
-
             throw new Exception($this->returnMessage);
-
         }
-
     }
 
     /**
-     * get origin xml response string
+     * get origin xml response string.
      *
      * @return string
      */
@@ -81,12 +78,14 @@ class UnifiedOrder
         if ($this->status !== 'SUCCESS') {
             $this->send();
         }
+
         return $this->responseXML;
     }
 
     /**
-     * @return string
      * @throws Exception
+     *
+     * @return string
      */
     public function reSign()
     {
@@ -100,7 +99,6 @@ class UnifiedOrder
         $sign = $this->order->getSign($this->responseContent);
 
         return $sign;
-
     }
 
     /**
@@ -120,5 +118,4 @@ class UnifiedOrder
     {
         return $this->status;
     }
-
 }
