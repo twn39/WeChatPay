@@ -41,7 +41,7 @@ abstract class OrderAbstract
      *
      * @return string
      */
-    protected function getQueryString(array $queryStringArray)
+    public function getQueryString(array $queryStringArray)
     {
         ksort($queryStringArray);
 
