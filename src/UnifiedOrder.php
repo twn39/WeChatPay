@@ -58,10 +58,10 @@ class UnifiedOrder
             throw new Exception($this->returnMessage);
         }
 
-        $this->responseContent['appId'] = (string) $responseObj->appid;
-        $this->responseContent['partnerId'] = (string) $responseObj->mch_id;
-        $this->responseContent['nonceStr'] = (string) $responseObj->nonce_str;
-        $this->responseContent['prepayId'] = (string) $responseObj->prepay_id;
+        $this->responseContent['appid'] = (string) $responseObj->appid;
+        $this->responseContent['partnerid'] = (string) $responseObj->mch_id;
+        $this->responseContent['noncestr'] = (string) $responseObj->nonce_str;
+        $this->responseContent['prepayid'] = (string) $responseObj->prepay_id;
 
         return $this->responseContent;
     }
@@ -91,8 +91,8 @@ class UnifiedOrder
             $this->send();
         }
 
-        $this->responseContent['timeStamp'] = time();
-        $this->responseContent['packageValue'] = self::PACKAGE;
+        $this->responseContent['timestamp'] = time();
+        $this->responseContent['package'] = self::PACKAGE;
 
         $sign = $this->order->getSign($this->responseContent);
 
