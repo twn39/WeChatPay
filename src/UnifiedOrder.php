@@ -91,7 +91,7 @@ class UnifiedOrder
             $this->send();
         }
 
-        $this->responseContent['timestamp'] = time();
+        $this->responseContent['timestamp'] = (string) time();
         $this->responseContent['package'] = self::PACKAGE;
         $this->responseContent['noncestr'] = $this->order->getNonceStr();
 
