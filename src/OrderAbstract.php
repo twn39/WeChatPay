@@ -21,7 +21,6 @@ abstract class OrderAbstract
     public function getSign(array $queryStringArray)
     {
         $queryString = $this->getQueryString($queryStringArray);
-        $queryString .= '&key='.$this->config->key;
 
         $sign = strtoupper(md5($queryString));
 
@@ -50,8 +49,9 @@ abstract class OrderAbstract
         foreach ($queryStringArray as $key => $value) {
             $queryString[] = "$key=$value";
         }
+        $queryString = implode($queryString, '&');
 
-        return implode($queryString, '&');
+        return $queryString . '&key=' . $this->config->key;
     }
 
     /**
