@@ -4,7 +4,7 @@ require '../vendor/autoload.php';
 
 use Monster\WeChatPay;
 
-$xml = file_get_contents("php://input");
+$xml = file_get_contents('php://input');
 
 $notify = WeChatPay\Notify::parseXML($xml);
 

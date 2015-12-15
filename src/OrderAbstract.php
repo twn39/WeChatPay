@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Monster\WeChatPay;
 
 abstract class OrderAbstract
@@ -51,7 +50,7 @@ abstract class OrderAbstract
         }
         $queryString = implode($queryString, '&');
 
-        return $queryString . '&key=' . $this->config->key;
+        return $queryString.'&key='.$this->config->key;
     }
 
     /**

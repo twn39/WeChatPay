@@ -4,9 +4,9 @@ namespace Monster\WeChatPay;
 
 class Notify
 {
-
     /**
      * @param $xml
+     *
      * @return array
      */
     public static function parseXML($xml)
