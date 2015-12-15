@@ -3,10 +3,7 @@
 namespace Monster\WeChatPay\Order;
 
 use GuzzleHttp\Client;
-use GuzzleHttp\Psr7\Request;
-
 use Monster\WeChatPay\QueryOrder;
-use Monster\WeChatPay\Exception;
 
 class Query
 {
@@ -21,7 +18,6 @@ class Query
         $this->queryOrder = $queryOrder;
         $this->requestXML = $this->queryOrder->toXML();
 
-        $this->client = new Client;
+        $this->client = new Client();
     }
-
 }
