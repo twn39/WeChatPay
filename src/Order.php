@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Monster\WeChatPay;
 
 class Order extends OrderAbstract
@@ -23,7 +22,6 @@ class Order extends OrderAbstract
         $this->order['notify_url'] = $this->config->notifyUrl;
         // TODO: get value from config
         $this->order['trade_type'] = 'APP';
-
     }
 
     public function setBody($body)
