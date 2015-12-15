@@ -19,7 +19,6 @@ class QueryOrder extends OrderAbstract
         $this->order['nonce_str'] = $this->getNonceStr();
     }
 
-
     public function setTransactionId($transactionId)
     {
         $this->order['transaction_id'] = $transactionId;
@@ -29,5 +28,4 @@ class QueryOrder extends OrderAbstract
     {
         $this->order['out_trade_no'] = $outTradeNo;
     }
-
 }

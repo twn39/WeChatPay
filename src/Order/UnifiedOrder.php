@@ -4,9 +4,8 @@ namespace Monster\WeChatPay\Order;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
-
-use Monster\WeChatPay\Order;
 use Monster\WeChatPay\Exception;
+use Monster\WeChatPay\Order;
 
 class UnifiedOrder
 {
