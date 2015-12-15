@@ -8,7 +8,11 @@ class Order extends OrderAbstract
     public function __construct(Config $config)
     {
         parent::__construct($config);
+        $this->loadConfig();
+    }
 
+    private function loadConfig()
+    {
         $this->order['appid'] = $this->config->appId;
         $this->order['mch_id'] = $this->config->mchId;
         $this->order['nonce_str'] = $this->getNonceStr();
@@ -19,6 +23,7 @@ class Order extends OrderAbstract
         $this->order['notify_url'] = $this->config->notifyUrl;
         // TODO: get value from config
         $this->order['trade_type'] = 'APP';
+
     }
 
     public function setBody($body)

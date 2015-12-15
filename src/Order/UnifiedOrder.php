@@ -1,9 +1,12 @@
 <?php
 
-namespace Monster\WeChatPay;
+namespace Monster\WeChatPay\Order;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Request;
+
+use Monster\WeChatPay\Order;
+use Monster\WeChatPay\Exception;
 
 class UnifiedOrder
 {
