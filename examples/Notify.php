@@ -6,7 +6,7 @@ use Monster\WeChatPay;
 
 $xml = file_get_contents('php://input');
 
-$notify = WeChatPay\Notify::parseXML($xml);
+$notify = WeChatPay\XML::parse($xml);
 
 var_dump($notify);
 
