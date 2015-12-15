@@ -28,10 +28,12 @@ $order->setTotalFee(0.01);
 $order->setProductId('20151212120434234435');
 $order->setOutTradeNo('2015121213232424323523');
 
-$unifiedOrder = new WeChatPay\UnifiedOrder($order);
+$unifiedOrder = new WeChatPay\Order\UnifiedOrder($order);
 
 $response = $unifiedOrder->send();
 var_dump($response);
 $prePayOrder = $unifiedOrder->getPrePayOrder();
 var_dump($prePayOrder);
 ```
+
+more example see /examples
