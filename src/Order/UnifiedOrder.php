@@ -9,13 +9,13 @@ use Monster\WeChatPay\Order;
 
 class UnifiedOrder
 {
-    private $order;
-    private $requestXML;
-    private $responseXML;
-    private $timeout = 30;
-    private $responseContent = [];
+    protected $order;
+    protected $requestXML;
+    protected $responseXML;
+    protected $timeout = 30;
+    protected $responseContent = [];
     public $status = 'FAIL';
-    private $returnMessage;
+    protected $returnMessage;
 
     const REMOTE_URL = 'https://api.mch.weixin.qq.com/pay/unifiedorder';
     const PACKAGE = 'Sign=WXPay';
