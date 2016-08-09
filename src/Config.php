@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Monster\WeChatPay;
 
 class Config
